@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhi Constructions - Building Dreams, Creating Reality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-gray-800 text-center;
+        }
+        .section-subtitle {
+            @apply mt-2 text-lg text-gray-600 text-center max-w-2xl mx-auto;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #project-modal.hidden, #quote-modal.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://res.cloudinary.com/dowhvdkjh/image/upload/short_qtcyjt" alt="Abhi Constructions Logo" class="h-14 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/56x56/f97316/ffffff?text=AC';">
+                 <span class="text-lg sm:text-xl font-bold text-white">Abhi Constructions</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-orange-400 transition">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-orange-400 transition">About</a>
+                <a href="#services" class="nav-link text-white hover:text-orange-400 transition">Services</a>
+                <a href="#projects" class="nav-link text-white hover:text-orange-400 transition">Projects</a>
+                <a href="#contact" class="nav-link text-white hover:text-orange-400 transition">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 bg-opacity-90">
+            <a href="#home" class="block py-2 px-4 text-sm text-white hover:bg-orange-500">Home</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-white hover:bg-orange-500">About</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-white hover:bg-orange-500">Services</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-white hover:bg-orange-500">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-white hover:bg-orange-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">Building Your Visions. Creating Reality.</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-fade-in-up">From concept to creation, Abhi Constructions is your trusted partner in building the future.</p>
+            <button id="get-quote-btn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 animate-fade-in-up">
+                Get Free Quote
+            </button>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Us Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="wow-animate" data-animation="fade-in-left">
+                        <img src="https://res.cloudinary.com/dowhvdkjh/image/upload/v1753516260/f77abf7c0506055d74672d6be5e486b5_lnmatp.jpg" alt="Modern office building" class="rounded-lg shadow-2xl w-full h-auto">
+                    </div>
+                    <div class="wow-animate" data-animation="fade-in-right">
+                        <h2 class="section-title text-left">About Abhi Constructions</h2>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Abhi Constructions has been a cornerstone of quality and integrity in the construction industry for over a decade. We are a team of passionate professionals dedicated to delivering exceptional results. Our commitment to innovation, superior craftsmanship, and client satisfaction is the foundation of our success.
+                        </p>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            We believe in building more than just structures; we build lasting relationships with our clients, based on trust, transparency, and a shared vision for excellence.
+                        </p>
+                        <div class="mt-8 flex space-x-8">
+                            <div>
+                                <p class="text-4xl font-bold text-orange-500">10+</p>
+                                <p class="text-gray-500">Years of Experience</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold text-orange-500">100+</p>
+                                <p class="text-gray-500">Projects Completed</p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold text-orange-500">98%</p>
+                                <p class="text-gray-500">Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Our Expertise</h2>
+                <p class="section-subtitle">We offer a comprehensive range of construction services tailored to meet your unique needs.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                    <!-- Service Card 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center wow-animate" data-animation="fade-in-up">
+                        <div class="bg-orange-500 text-white rounded-full p-4 inline-block">
+                            <i data-lucide="home"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Residential Construction</h3>
+                        <p class="text-gray-600">Building beautiful, functional, and enduring homes for families to create lasting memories.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center wow-animate" data-animation="fade-in-up" data-delay="100">
+                        <div class="bg-orange-500 text-white rounded-full p-4 inline-block">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Commercial Projects</h3>
+                        <p class="text-gray-600">Creating innovative and efficient commercial spaces that help businesses thrive.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center wow-animate" data-animation="fade-in-up" data-delay="200">
+                        <div class="bg-orange-500 text-white rounded-full p-4 inline-block">
+                            <i data-lucide="paint-roller"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Renovations & Remodeling</h3>
+                        <p class="text-gray-600">Transforming existing spaces with modern designs and high-quality finishes.</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center wow-animate" data-animation="fade-in-up" data-delay="300">
+                        <div class="bg-orange-500 text-white rounded-full p-4 inline-block">
+                            <i data-lucide="ruler"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-2">Design & Architecture</h3>
+                        <p class="text-gray-600">Collaborating with top architects to bring your vision to life with precision and creativity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of our commitment to quality, design, and craftsmanship.</p>
+                <div class="mt-8 flex justify-center space-x-2 sm:space-x-4">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="renovation">Renovation</button>
+                </div>
+                <div id="project-gallery" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Project Card -->
+                    <div class="project-card residential overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" 
+                        data-title="Modern Villa"
+                        data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                        data-size="4,500 sq. ft."
+                        data-budget="₹2.5 Cr"
+                        data-duration="18 Months"
+                        data-address="Koregaon Park, Pune, Maharashtra">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern Villa" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                            <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Modern Villa</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="project-card commercial overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" data-delay="100"
+                        data-title="Corporate HQ"
+                        data-img="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=2070&auto=format&fit=crop"
+                        data-size="50,000 sq. ft."
+                        data-budget="₹15 Cr"
+                        data-duration="24 Months"
+                        data-address="BKC, Mumbai, Maharashtra">
+                        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=2070&auto=format&fit=crop" alt="Corporate Headquarters" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                             <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Corporate HQ</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="project-card renovation overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" data-delay="200"
+                        data-title="Kitchen Remodel"
+                        data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop"
+                        data-size="300 sq. ft."
+                        data-budget="₹8 Lakhs"
+                        data-duration="2 Months"
+                        data-address="Warje, Pune, Maharashtra">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop" alt="Kitchen Renovation" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                             <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Kitchen Remodel</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="project-card residential overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" data-delay="300"
+                        data-title="Family Residence"
+                        data-img="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop"
+                        data-size="3,200 sq. ft."
+                        data-budget="₹1.8 Cr"
+                        data-duration="15 Months"
+                        data-address="Civil Lines, Nagpur, Maharashtra">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Suburban Family Home" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                             <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Family Residence</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="project-card commercial overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" data-delay="400"
+                        data-title="Retail Plaza"
+                        data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                        data-size="25,000 sq. ft."
+                        data-budget="₹8 Cr"
+                        data-duration="20 Months"
+                        data-address="FC Road, Pune, Maharashtra">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Retail Complex" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                             <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Retail Plaza</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card -->
+                    <div class="project-card renovation overflow-hidden rounded-lg shadow-lg relative group wow-animate cursor-pointer" data-animation="zoom-in" data-delay="500"
+                        data-title="Luxury Bathroom"
+                        data-img="https://res.cloudinary.com/dowhvdkjh/image/upload/v1753516387/contemporary-bathroom-elements_1_va9cu2.jpg"
+                        data-size="200 sq. ft."
+                        data-budget="₹5 Lakhs"
+                        data-duration="1 Month"
+                        data-address="Aundh, Pune, Maharashtra">
+                        <img src="https://res.cloudinary.com/dowhvdkjh/image/upload/v1753516387/contemporary-bathroom-elements_1_va9cu2.jpg" alt="Bathroom Renovation" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transform translate-y-4 transition-all duration-500">
+                            <div class="text-center text-white p-4">
+                                <h3 class="text-xl font-bold">Luxury Bathroom</h3>
+                                <p class="text-sm mt-1">Click for details</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Our clients' satisfaction is our greatest achievement.</p>
+                <!-- **FIXED**: Added overflow-hidden to this container -->
+                <div class="relative mt-12 overflow-hidden rounded-lg">
+                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                         <!-- Testimonial 1 -->
+                        <div class="testimonial-item min-w-full">
+                            <div class="bg-gray-100 p-8 max-w-3xl mx-auto text-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-orange-200" alt="Client Photo">
+                                <p class="text-gray-600 italic">"Abhi Constructions turned our dream home into a reality. Their attention to detail and commitment to quality were outstanding. We couldn't be happier with the result!"</p>
+                                <h4 class="font-bold text-lg mt-4">Prakash Sharma</h4>
+                                <p class="text-sm text-gray-500">Homeowner, Nagpur</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-item min-w-full">
+                           <div class="bg-gray-100 p-8 max-w-3xl mx-auto text-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-orange-200" alt="Client Photo">
+                                <p class="text-gray-600 italic">"Working with Abhi Constructions on our new office building was a seamless experience. They were professional, on-time, and on-budget. Highly recommended!"</p>
+                                <h4 class="font-bold text-lg mt-4">Anjali Deshpande</h4>
+                                <p class="text-sm text-gray-500">CEO, Tech Solutions Ltd.</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-item min-w-full">
+                            <div class="bg-gray-100 p-8 max-w-3xl mx-auto text-center">
+                                <img src="https://randomuser.me/api/portraits/men/46.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-orange-200" alt="Client Photo">
+                                <p class="text-gray-600 italic">"The renovation work they did on our apartment was phenomenal. The team was creative, efficient, and the craftsmanship is top-notch. It feels like a brand new space."</p>
+                                <h4 class="font-bold text-lg mt-4">Sameer Joshi</h4>
+                                <p class="text-sm text-gray-500">Apartment Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="prev-testimonial" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200 z-10">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button id="next-testimonial" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Get In Touch</h2>
+                <p class="section-subtitle text-gray-300">Have a project in mind? Let's talk about how we can build it together.</p>
+                <div class="grid md:grid-cols-2 gap-12 mt-12">
+                    <div class="wow-animate" data-animation="fade-in-left">
+                        <form id="contact-form" class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <input type="tel" placeholder="Your Phone" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Send Message</button>
+                        </form>
+                        <div id="form-status" class="mt-4 text-center"></div>
+                    </div>
+                    <div class="wow-animate" data-animation="fade-in-right">
+                        <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="map-pin" class="text-orange-400 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Address</h4>
+                                    <p class="text-gray-300">123 Construction Ave, Warud, Maharashtra, 444906, India</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <i data-lucide="mail" class="text-orange-400 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-300">contact@abhiconstructions.com</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <i data-lucide="phone" class="text-orange-400 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-300">+91 98765 43210</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 rounded-lg overflow-hidden">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.758333276664!2d78.2327468149342!3d21.12224538594803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd43e3c0a8d7a1b%3A0x4c2f6d4d5e7f8e9a!2sWarud%2C%20Maharashtra%20444906!5e0!3m2!1sen!2sin!4v1678886456789!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-3 mb-4">
+                 <img src="https://res.cloudinary.com/dowhvdkjh/image/upload/short_qtcyjt" alt="Abhi Constructions Logo" class="h-12 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/48x48/f97316/ffffff?text=AC';">
+            </div>
+            <p class="mb-4">Building Dreams, Creating Reality.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="hover:text-orange-400"><i data-lucide="facebook"></i></a>
+                <a href="#" class="hover:text-orange-400"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover:text-orange-400"><i data-lucide="instagram"></i></a>
+                <a href="#" class="hover:text-orange-400"><i data-lucide="linkedin"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Abhi Constructions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 transition-opacity duration-300">
+        <div id="modal-content" class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start">
+                    <h2 id="modal-title" class="text-3xl font-bold text-gray-800"></h2>
+                    <button id="modal-close-btn" class="text-gray-500 hover:text-red-600 transition">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mt-6">
+                    <img id="modal-img" src="" alt="Project Image" class="rounded-lg w-full h-auto object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">Project Details</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li><strong>Size:</strong> <span id="modal-size"></span></li>
+                            <li><strong>Budget:</strong> <span id="modal-budget"></span></li>
+                            <li><strong>Duration:</strong> <span id="modal-duration"></span></li>
+                            <li><strong>Address:</strong> <span id="modal-address"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 transition-opacity duration-300">
+        <div id="quote-modal-content" class="bg-white rounded-lg shadow-2xl w-full max-w-sm transform scale-95 transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Get a Free Quote</h2>
+                    <button id="quote-modal-close-btn" class="text-gray-500 hover:text-red-600 transition">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <a href="mailto:kunalwadasker2003@gmail.com" class="flex items-center justify-center w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg text-lg transition duration-300">
+                        <i data-lucide="mail" class="mr-2"></i> Email Us
+                    </a>
+                    <a href="https://wa.me/917219408643" target="_blank" class="flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg text-lg transition duration-300">
+                        <i data-lucide="message-circle" class="mr-2"></i> Chat on WhatsApp
+                    </a>
+                    <a href="tel:7219408643" class="flex items-center justify-center w-full bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-lg text-lg transition duration-300">
+                        <i data-lucide="phone" class="mr-2"></i> Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-gray-900', 'shadow-lg');
+            }
+        });
+
+        // Smooth Scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                // Close mobile menu on click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+
+        // Project Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectGallery = document.getElementById('project-gallery');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+                const cards = projectGallery.querySelectorAll('.project-card');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .filter-btn {
+                @apply bg-gray-200 text-gray-700 py-2 px-4 rounded-full transition duration-300 text-sm;
+            }
+            .filter-btn.active, .filter-btn:hover {
+                @apply bg-orange-500 text-white;
+            }
+        `;
+        document.head.appendChild(style);
+
+
+        // Testimonial Slider
+        const slider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        let currentIndex = 0;
+        const totalTestimonials = testimonials.length;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalTestimonials;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+            updateSlider();
+        });
+        
+        setInterval(() => {
+            nextBtn.click();
+        }, 5000);
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Contact Form submission
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = 'white';
+            setTimeout(() => {
+                formStatus.textContent = 'Thank you! Your message has been sent.';
+                formStatus.style.color = '#34D399';
+                contactForm.reset();
+                 setTimeout(() => { formStatus.textContent = ''; }, 5000);
+            }, 1500);
+        });
+
+        // Scroll Animations
+        const animatedElements = document.querySelectorAll('.wow-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animation = entry.target.dataset.animation || 'fade-in-up';
+                    const delay = entry.target.dataset.delay || '0';
+                    entry.target.style.animationDelay = `${delay}ms`;
+                    entry.target.classList.add(animation);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        const animationStyles = document.createElement('style');
+        animationStyles.innerHTML = `
+            @keyframes fade-in-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes fade-in-left { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+            @keyframes fade-in-right { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+            @keyframes zoom-in { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+            .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
+            .animate-fade-in-up { animation: fade-in-up 1s ease-out 0.5s forwards; }
+            .wow-animate { opacity: 0; }
+            .wow-animate.fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+            .wow-animate.fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+            .wow-animate.fade-in-left { animation: fade-in-left 0.8s ease-out forwards; }
+            .wow-animate.fade-in-right { animation: fade-in-right 0.8s ease-out forwards; }
+            .wow-animate.zoom-in { animation: zoom-in 0.8s ease-out forwards; }
+        `;
+        document.head.appendChild(animationStyles);
+
+        // Project Modal Logic
+        const projectModal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        const openProjectModal = (data) => {
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-img').src = data.img;
+            document.getElementById('modal-img').alt = data.title;
+            document.getElementById('modal-size').textContent = data.size;
+            document.getElementById('modal-budget').textContent = data.budget;
+            document.getElementById('modal-duration').textContent = data.duration;
+            document.getElementById('modal-address').textContent = data.address;
+            
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                projectModal.style.opacity = '1';
+                modalContent.style.transform = 'scale(1)';
+            }, 10);
+        };
+
+        const closeProjectModal = () => {
+            projectModal.style.opacity = '0';
+            modalContent.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                projectModal.classList.add('hidden');
+                if (document.getElementById('quote-modal').classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                }
+            }, 300);
+        };
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectData = {
+                    title: card.dataset.title,
+                    img: card.dataset.img,
+                    size: card.dataset.size,
+                    budget: card.dataset.budget,
+                    duration: card.dataset.duration,
+                    address: card.dataset.address,
+                };
+                openProjectModal(projectData);
+            });
+        });
+
+        modalCloseBtn.addEventListener('click', closeProjectModal);
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeProjectModal();
+            }
+        });
+
+        // Quote Modal Logic
+        const quoteModal = document.getElementById('quote-modal');
+        const quoteModalContent = document.getElementById('quote-modal-content');
+        const quoteModalCloseBtn = document.getElementById('quote-modal-close-btn');
+        const getQuoteBtn = document.getElementById('get-quote-btn');
+
+        const openQuoteModal = () => {
+            quoteModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                quoteModal.style.opacity = '1';
+                quoteModalContent.style.transform = 'scale(1)';
+            }, 10);
+        };
+
+        const closeQuoteModal = () => {
+            quoteModal.style.opacity = '0';
+            quoteModalContent.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                quoteModal.classList.add('hidden');
+                 if (document.getElementById('project-modal').classList.contains('hidden')) {
+                    document.body.style.overflow = 'auto';
+                }
+            }, 300);
+        };
+
+        getQuoteBtn.addEventListener('click', openQuoteModal);
+        quoteModalCloseBtn.addEventListener('click', closeQuoteModal);
+        quoteModal.addEventListener('click', (e) => {
+            if (e.target === quoteModal) {
+                closeQuoteModal();
+            }
+        });
+
+        // Keyboard listener for both modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!projectModal.classList.contains('hidden')) {
+                    closeProjectModal();
+                }
+                if (!quoteModal.classList.contains('hidden')) {
+                    closeQuoteModal();
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
